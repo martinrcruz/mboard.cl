@@ -1,0 +1,88 @@
+<div class="container-fluid">
+  <div class="row header-section">
+    <div class="col-4">
+      <img src="assets/icons/bar-chart.png" class="header-logo">
+      <h1> MBoard</h1>
+    </div>
+    <div class="col-8 header-buttons">
+      <button><img src="assets/icons/bell.png" class="notification-icon"></button>
+
+      <button type="button" data-bs-toggle="dropdown"> <img src="assets/images/user/martin.png"> </button>
+      <ul class="dropdown-menu dropdown-menu-lg-start">
+        <li><a class="dropdown-item" href="#">Perfil</a></li>
+        <li><a class="dropdown-item" href="#">Ajustes</a></li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+        <li><a class="dropdown-item" href="#">Cerrar sesion</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-2 sidebar-section">
+
+      <div class="menu-section">
+
+
+        <div class="buttons-section">
+          <ul>
+            <li>
+              <button routerLink="/dashboard"> <img src="assets/icons/laptop.png" class="sidebar-icon">
+                <p>Dashboard</p>
+              </button>
+            </li>
+            <li>
+              <button routerLink="/agenda"> <img src="assets/icons/calendario.png" class="sidebar-icon">
+                <p>Agenda</p>
+              </button>
+            </li>
+            <li>
+              <button routerLink="/notas"> <img src="assets/icons/cuaderno.png" class="sidebar-icon">
+                <p>Notas</p>
+              </button>
+            </li>
+            <li>
+              <button routerLink="/presupuesto"> <img src="assets/icons/billing.png" class="sidebar-icon">
+                <p>Gastos y Presupuesto</p>
+              </button>
+            </li>
+            <li>
+              <button routerLink="/proyectos"> <img src="assets/icons/project-management.png" class="sidebar-icon">
+                <p>Proyectos</p>
+              </button>
+            </li>
+            <li>
+              <button routerLink="/cuentas"> <img src="assets/icons/user.png" class="sidebar-icon">
+                <p>Gestion de Cuentas</p>
+              </button>
+            </li>
+            <li>
+              <button routerLink="/cloud"> <img src="assets/icons/cloud.png" class="sidebar-icon">
+                <p>Servidor & Cloud</p>
+              </button>
+            </li>
+
+          </ul>
+
+
+          <div class="footer-button">
+            <button> <img src="assets/icons/settings.png" class="sidebar-icon">
+              <p>Configuracion</p>
+            </button>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Content Section -->
+<div class="content-section">
+  <router-outlet></router-outlet>
+</div>

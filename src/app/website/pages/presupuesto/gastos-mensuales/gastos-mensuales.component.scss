@@ -1,0 +1,17 @@
+.add-button {
+  background-color: var(--mint);
+  float: right;
+  border: none;
+  width: 40%;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 6px;
+
+  img {
+    width: 24px;
+  }
+}
+.add-button:hover {
+  background-color: var(--hover-mint);
+  transition: 0.3s;
+}

@@ -1,0 +1,92 @@
+<div class="container-fluid">
+  <div class="row dialog-header">
+    <div class="col-11">
+      <h1>{{this.title}}</h1>
+    </div>
+    <div class="col-1">
+      <img src="assets/icons/close.png" alt="" mat-dialog-close>
+    </div>
+  </div>
+</div>
+
+<mat-dialog-content>
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="col-4">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>
+            Detalle
+          </mat-label>
+          <input matInput type="text">
+        </mat-form-field>
+      </div>
+      <div class="col-8">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>
+            Descripcion
+          </mat-label>
+          <input matInput type="text">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-5">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Forma de Pago</mat-label>
+          <mat-select>
+            <mat-option value="Transferencia">Transferencia</mat-option>
+            <mat-option value="Pago automatico">Pago Automatico</mat-option>
+            <mat-option value="Efectivo">Efectivo</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-7">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Cuenta asociada</mat-label>
+          <mat-select>
+            <mat-option value="1">Cuenta Vista/Banco Santander (7058926331)</mat-option>
+            <mat-option value="2">Cuenta Rut/Banco Estado (20460059)</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-4">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Personal/Empresa</mat-label>
+          <mat-select>
+            <mat-option value="1">Gasto Personal</mat-option>
+            <mat-option value="2">Gasto Empresa</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-4">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Fecha de pago</mat-label>
+          <input matInput [matDatepicker]="picker">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="col-4">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>
+            Monto
+          </mat-label>
+          <input matInput type="text">
+        </mat-form-field>
+      </div>
+
+
+
+
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

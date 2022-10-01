@@ -1,0 +1,125 @@
+.header-section {
+    background-color: #1d2d44;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 2px;
+    z-index: 9999;
+
+    h1 {
+        font-size: 30px;
+        padding-left: 50px;
+        padding-top: 3px;
+    }
+
+    .header-logo {
+        width: 45px;
+        float: left;
+    }
+
+    .header-buttons {
+        text-align: end;
+
+        button {
+            border: none;
+            background-color: transparent;
+            border-radius: 50%;
+            padding: 0px;
+
+            img {
+                width: 45px;
+                margin-top: 1px;
+                margin-right: 10px;
+            }
+        }
+
+        .notification-icon {
+            width: 25px !important;
+            margin-right: 25px !important;
+        }
+    }
+}
+
+.sidebar-section {
+    background-color: #3e5c76;
+    height: 100vh;
+    position: fixed;
+    top: 58px;
+    margin-left: 0px;
+    margin-right: 0px;
+    z-index: 9999;
+
+    // padding-left: 0px;
+    // padding-right: 0px;
+}
+
+.content-section {
+    margin-left: 18%;
+    margin-top: 6%;
+}
+
+//menu section
+.menu-section {
+    .buttons-section {
+        margin-top: 30%;
+
+        .sidebar-icon {
+            width: 24px;
+            float: left;
+            margin-left: 20px;
+        }
+    }
+
+    ul {
+        list-style: none;
+        width: 100%;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    button {
+        background-color: #476783;
+        display: block;
+        width: 100%;
+        color: white;
+        border: none;
+        margin: 5px 0px 5px 0px;
+        padding: 10px;
+        border-radius: 5px;
+
+        p {
+            float: left;
+            padding: 0px;
+            padding-left: 15px;
+            margin: 0px;
+        }
+    }
+
+    button:hover {
+        background-color: #1d2d448e;
+        transition: 0.3s;
+        color: rgba(255, 255, 255, 0.973);
+    }
+}
+
+.footer-button {
+    position: absolute;
+    bottom: 53px;
+    width: 100%;
+    left: 0px;
+
+    button {
+        background-color: #1d2d44;
+        border-radius: 0px !important;
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+
+    button:hover {
+        background-color: #1d2d44c0;
+        transition: 0.3s;
+        color: rgba(255, 255, 255, 0.973);
+    }
+}

@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+//THEME COLOR DECLARATION
+:root {
+  --violet: #3e1862;
+  --dark-blue: #1d2d44;
+  --basic-blue: #3e5c76;
+  --soft-blue: #748cab;
+  --mint: #55b182;
+  --hover-mint: rgb(92, 204, 146);
+  --bronze: #ce842f;
+}
+
+//DIALOG STYLES
+.dialog-header {
+  background-color: var(--dark-blue);
+  color: white;
+  padding: 20px 10px 5px 10px;
+  margin-bottom: 20px;
+  h1{
+    font-size: 28px;
+    font-weight: 550;
+  }
+  img {
+    width: 20px;
+    padding-top: 7px;
+    margin-right:12px;
+    float: right;
+  }
+}
+
+.full-width{
+  width: 100%;
+}

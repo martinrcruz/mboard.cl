@@ -1,0 +1,238 @@
+<div class="container-fluid">
+  <div class="row header-section">
+    <div class="col-4">
+      <img src="assets/icons/bar-chart.png" class="header-logo">
+      <h1> posManager </h1>
+    </div>
+    <div class="col-8 header-buttons">
+      <button><img src="assets/icons/bell.png" class="notification-icon"></button>
+
+      <button type="button" data-bs-toggle="dropdown"> <img src="assets/images/user/martin.png"> </button>
+      <ul class="dropdown-menu dropdown-menu-lg-start">
+        <li><a class="dropdown-item" href="#">Perfil</a></li>
+        <li><a class="dropdown-item" href="#">Ajustes</a></li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+        <li><a class="dropdown-item" href="#">Cerrar sesion</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-2 sidebar-section">
+
+      <div class="menu-section">
+        <div class="buttons-section">
+
+          <!-- INVENTORY SECTION -->
+          <div class="section-header">
+            <p>Inventario</p>
+          </div>
+          <ul>
+            <li>
+              <button routerLink="/inventory/product/list">
+                <span class="menu-btn">
+                  <i class="fas fa-box-open fa-xl menu-btn-icon"></i>
+                  <p class="menu-btn-text"> Productos </p>
+                </span>
+              </button>
+            </li>
+            <hr class="sidebar-divider">
+            <li>
+              <button routerLink="/inventory/product/list">
+                <span class="menu-btn">
+                  <i class="fas fa-box fa-xl menu-btn-icon"></i>
+                  <p class="menu-btn-text" style="padding-left: 10% !important;"> Categorias </p>
+                </span>
+              </button>
+            </li>
+            <hr class="sidebar-divider">
+            <li>
+              <button routerLink="/inventory/product/list">
+                <span class="menu-btn">
+                  <i class="fas fa-boxes fa-xl menu-btn-icon"></i>
+                  <p class="menu-btn-text"> Sub-categorias </p>
+                </span>
+              </button>
+            </li>
+            <hr class="sidebar-divider">
+            <li>
+              <button routerLink="/inventory/product/list">
+                <span class="menu-btn">
+                  <i class="fas fa-tags fa-xl menu-btn-icon"></i>
+                  <p class="menu-btn-text"> Marcas </p>
+                </span>
+              </button>
+            </li>
+            <hr class="sidebar-divider">
+            <li>
+              <button routerLink="/inventory/product/list">
+                <span class="menu-btn">
+                  <i class="fas fa-barcode fa-xl menu-btn-icon"></i>
+                  <p class="menu-btn-text"> Codigo de barras </p>
+                </span>
+              </button>
+            </li>
+          </ul>
+
+          <!-- SALES SECTION -->
+          <div class="section-header">
+            <p>Ventas</p>
+          </div>
+          <ul>
+            <li>
+              <button routerLink="/inventory/product/list">
+                <span class="menu-btn">
+                  <i class="fas fa-cash-register fa-xl menu-btn-icon"></i>
+                  <p class="menu-btn-text"> Gestionar ventas </p>
+                </span>
+              </button>
+            </li>
+
+            <hr class="sidebar-divider">
+            <li>
+              <button routerLink="/inventory/product/list">
+                <span class="menu-btn">
+                  <i class="fas fa-chart-line fa-xl menu-btn-icon"></i>
+                  <p class="menu-btn-text"> Reportes </p>
+                </span>
+              </button>
+            </li>
+
+            <hr class="sidebar-divider">
+            <li>
+              <button routerLink="/inventory/product/list">
+                <span class="menu-btn">
+                  <i class="fas fa-undo-alt fa-xl menu-btn-icon"></i>
+                  <p class="menu-btn-text"> Devoluciones </p>
+                </span>
+              </button>
+            </li>
+          </ul>
+
+          <!-- PURCHASES SECTION -->
+          <div class="section-header">
+            <p>Compras</p>
+          </div>
+          <ul>
+            <li>
+              <button routerLink="/inventory/product/list">
+                <span class="menu-btn">
+                  <i class="fas fa-wallet fa-xl menu-btn-icon"></i>
+                  <p class="menu-btn-text"> Gestionar compras </p>
+                </span>
+              </button>
+            </li>
+            <hr class="sidebar-divider">
+
+            <li>
+              <button routerLink="/inventory/product/list">
+                <span class="menu-btn">
+                  <i class="fas fa-file-invoice-dollar fa-xl menu-btn-icon" style="padding-left:15px;"></i>
+                  <p class="menu-btn-text" style="padding-left:16px;"> Ordenes de compra </p>
+                </span>
+              </button>
+            </li>
+            <hr class="sidebar-divider">
+
+            <li>
+              <button routerLink="/inventory/product/list">
+                <span class="menu-btn">
+                  <i class="fas fa-chart-line fa-xl menu-btn-icon"></i>
+                  <p class="menu-btn-text"> Reportes </p>
+                </span>
+              </button>
+            </li>
+            <hr class="sidebar-divider">
+            <li>
+              <button routerLink="/inventory/product/list">
+                <span class="menu-btn">
+                  <i class="fas fa-undo-alt fa-xl menu-btn-icon"></i>
+                  <p class="menu-btn-text"> Devoluciones </p>
+                </span>
+              </button>
+            </li>
+          </ul>
+
+          <!-- FINANCE & ACCOUNT SECTION -->
+          <div class="section-header">
+            <p>Contabilidad y Finanzas</p>
+          </div>
+          <ul>
+            <li>
+              <button routerLink="/inventory/product/list">
+                <span class="menu-btn">
+                  <i class="fas fa-copy fa-xl menu-btn-icon"  style="padding-left:17px;"></i>
+                  <p class="menu-btn-text"> Doc. Electronicos </p>
+                </span>
+              </button>
+            </li>
+
+            <hr class="sidebar-divider">
+            <li>
+              <button routerLink="/inventory/product/list">
+                <span class="menu-btn">
+                  <i class="fas fa-coins fa-xl menu-btn-icon"></i>
+                  <p class="menu-btn-text" style="padding-left:20px;"> Impuestos </p>
+                </span>
+              </button>
+            </li>
+
+            <hr class="sidebar-divider">
+            <li>
+              <button routerLink="/inventory/product/list">
+                <span class="menu-btn">
+                  <i class="fas fa-balance-scale-right fa-xl menu-btn-icon"></i>
+                  <p class="menu-btn-text"> Analisis y Reportes </p>
+                </span>
+              </button>
+            </li>
+
+            <hr class="sidebar-divider">
+            <li>
+              <button routerLink="/inventory/product/list">
+                <span class="menu-btn">
+                  <i class="fas fa-id-badge fa-xl menu-btn-icon"  style="padding-left:18px;"></i>
+                  <p class="menu-btn-text"  style="padding-left:20px;"> Mi SII </p>
+                </span>
+              </button>
+            </li>
+          </ul>
+
+          <!-- USERS SECTION -->
+          <div class="section-header">
+            <p>Usuarios</p>
+          </div>
+          <ul>
+            <li>
+              <button routerLink="/inventory/product/list">
+                <span class="menu-btn">
+                  <i class="fas fa-users fa-xl menu-btn-icon"></i>
+                  <p class="menu-btn-text"> Gestión de usuarios </p>
+                </span>
+              </button>
+            </li>
+          </ul>
+
+
+          <div class="footer-button">
+            <button> <img src="assets/icons/settings.png" class="sidebar-icon">
+              <p>Configuracion</p>
+            </button>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Content Section -->
+<div class="content-section">
+  <router-outlet></router-outlet>
+</div>

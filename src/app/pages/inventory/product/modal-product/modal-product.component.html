@@ -1,0 +1,146 @@
+<div class="container-fluid">
+  <div class="row header-row">
+    <div class="col-11">
+      <h1 class="header-title">
+        {{ this.title }}
+      </h1>
+    </div>
+    <div class="col-1">
+      <button mat-dialog-close class="close"><i class="fas fa-close fa-xl white-icon"></i></button>
+    </div>
+  </div>
+</div>
+
+
+<form action="">
+  <div class="mat-dialog-content">
+    <div class="container-fluid pt-4">
+      <!-- <h1>Formulario de producto</h1> -->
+      <div class="row pb-4">
+        <div class="col-4 text-center">
+          <img class="img-placeholder-s" src="../../../../../assets/images/img-placeholder.jpg" alt="">
+        </div>
+        <div class="col-8 mt-5 pt-2">
+          <mat-label>Selecciona la foto del producto</mat-label>
+
+          <div class="input-group">
+            <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04"
+              aria-label="Upload">
+          </div>
+        </div>
+      </div>
+
+      <div class="row pb-3">
+        <div class="col-8">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Nombre de producto</mat-label>
+            <input matInput placeholder="Placeholder">
+            <mat-hint>Por ejemplo: Lata de atún</mat-hint>
+          </mat-form-field>
+        </div>
+
+        <div class="col-4">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Codigo SKU</mat-label>
+            <input matInput placeholder="Placeholder">
+            <mat-hint>Por ejemplo: SKU: EJ19283</mat-hint>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row pb-3">
+        <div class="col-4">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Marca</mat-label>
+            <input matInput placeholder="Placeholder">
+          </mat-form-field>
+        </div>
+
+        <div class="col-4">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Categoria</mat-label>
+            <input matInput placeholder="Placeholder">
+          </mat-form-field>
+        </div>
+
+        <div class="col-4">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Sub-Categoria</mat-label>
+            <input matInput placeholder="Placeholder">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row pb-3">
+        <div class="col">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Descripcion</mat-label>
+            <input matInput placeholder="Placeholder">
+            <mat-hint>Por ejemplo: Atun enlatado marca tuna.</mat-hint>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row pb-3">
+        <div class="col-2">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Peso/Cant. </mat-label>
+            <input matInput placeholder="Placeholder">
+          </mat-form-field>
+        </div>
+
+        <div class="col-2">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Medida </mat-label>
+            <input matInput placeholder="Placeholder">
+          </mat-form-field>
+        </div>
+
+        <div class="col-2">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Valor Compra </mat-label>
+            <input matInput placeholder="Placeholder">
+          </mat-form-field>
+        </div>
+
+        <div class="col-2">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Valor Venta </mat-label>
+            <input matInput placeholder="Placeholder">
+          </mat-form-field>
+        </div>
+
+        <div class="col-2">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Ganancia/un. </mat-label>
+            <input matInput placeholder="Placeholder">
+          </mat-form-field>
+        </div>
+
+        <div class="col-2">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Stock </mat-label>
+            <input matInput placeholder="Placeholder">
+          </mat-form-field>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+<hr>
+
+  <div class="mat-dialog-actions">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <button mat-dialog-close class="close-button float-start">Cerrar</button>
+        </div>
+        <div class="col" *ngFor="let button of buttons">
+          <button class="{{button.action}}-button float-end"> {{button.text}} </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

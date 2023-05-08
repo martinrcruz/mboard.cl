@@ -13,31 +13,158 @@ body {
 :root {
   --violet: #3e1862;
   --dark-blue: #1d2d44;
-  --basic-blue: #3e5c76;
-  --soft-blue: #748cab;
+  --basic-blue: #f7f7f7;
+  --soft-blue: #f0f0f0;
   --mint: #55b182;
   --hover-mint: rgb(92, 204, 146);
-  --bronze: #ce842f;
+  --bronze: #e4a126;
+
+  --dark-base: #353535;
+  --dark-base-hover: #353535;
+
+  --neutral-base: ;
+  --light-base: ;
+  --lighter-base: ;
+  --white: ;
+  --light-gray: ;
+
+  --green: #55b182;
+  --yellow: #f3b135;
+  --red: rgb(168, 39, 39);
+
+  --dark-gray: #353535;
+  --dark-gray-hover: #414141;
+  --sidebar-background: #efefef;
+  --sidebar-section-title: #353535;
+  --sidebar-btn: #e6e6e679;
+  --sidebar-btn-hover: #757e8b;
+  --sidebar-btn-color: #fdfdfd;
 }
 
-//DIALOG STYLES
-.dialog-header {
-  background-color: var(--dark-blue);
-  color: white;
-  padding: 20px 10px 5px 10px;
-  margin-bottom: 20px;
-  h1{
-    font-size: 28px;
-    font-weight: 550;
-  }
-  img {
-    width: 20px;
-    padding-top: 7px;
-    margin-right:12px;
-    float: right;
-  }
-}
-
-.full-width{
+//GLOBAL UTILITIES
+.full-width {
   width: 100%;
+}
+
+.file-input {
+  background-color: black;
+}
+
+.img-placeholder-s {
+  width: 170px;
+  height: 120px;
+}
+
+//GLOBAL UTILITIES - BREADCRUMB
+.breadcrumb {
+  background-color: rgba(245, 245, 245, 0.623) !important;
+  padding: 20px 20px 0px 20px !important;
+  margin-bottom: 2% !important;
+  border-radius: 10px !important;
+  h4 {
+    margin-top: 5px;
+    padding-right: 5px;
+    display: inline;
+  }
+  h1 {
+    display: inline;
+  }
+}
+
+//GLOBAL UTILITIES - ICONS
+.white-icon {
+  color: white;
+}
+
+//GLOBAL UTILITIES - BUTTONS
+.add-button {
+  background-color: var(--mint);
+  color: white;
+  padding: 9px 25px 9px 25px;
+  border: none;
+  border-radius: 6px;
+  margin-bottom: 22px;
+  font-size: 16px;
+}
+
+.add-button:hover {
+  background-color: var(--hover-mint);
+  color: white;
+  border-radius: 6px;
+  transition: 0.5s;
+}
+
+.edit-button {
+  background-color: var(--bronze);
+  color: white;
+  padding: 9px 25px 9px 25px;
+  border: none;
+  border-radius: 6px;
+  margin-bottom: 22px;
+  font-size: 16px;
+}
+
+.edit-button:hover {
+  background-color: #f3b135;
+  color: white;
+  border-radius: 6px;
+  transition: 0.5s;
+}
+
+.close-button {
+  background-color: rgb(168, 39, 39);
+  color: white;
+  padding: 9px 25px 9px 25px;
+  border: none;
+  border-radius: 6px;
+  margin-bottom: 22px;
+  font-size: 16px;
+}
+.close-button:hover {
+  background-color: rgb(199, 44, 44);
+  color: white;
+  border-radius: 6px;
+  transition: 0.5s;
+}
+
+//GLOBAL UTILITIES - TABLES
+.custom-mat-table {
+  width: 100%;
+
+  .mat-header-row {
+    background-color: rgb(248, 248, 248);
+    height: 40px;
+  }
+  .mat-header-cell {
+    color: rgba(0, 0, 0, 0.678);
+    font-size: 13px;
+    font-weight: 500;
+    border-left: 1px solid rgba(238, 238, 238, 0.644);
+    padding-left: 1%;
+  }
+
+  .mat-cell {
+    border-left: 1px solid rgba(238, 238, 238, 0.384);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+  }
+}
+
+//GLOBAL UTILITIES - DIALOGS/MODALS
+.header-row {
+  background-color: var(--dark-gray);
+  margin: 0px;
+  padding: 12px 10px 0px 10px;
+}
+.header-title {
+  color: white;
+  font-weight: 500;
+}
+.close {
+  background-color: rgba(255, 255, 255, 0.062);
+  padding: 12px 14px 9px 14px;
+  margin-top: -3px;
+  border-radius: 20px;
+  border: none;
 }

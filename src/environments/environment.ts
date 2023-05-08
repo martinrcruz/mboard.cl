@@ -4,7 +4,11 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:8080'
+  apiUrl: 'http://localhost:8080',
+  authApi: 'http://localhost:8082',
+  jwtTokenStorageKey: 'access_token',
+  xsrfTokenCookieName: 'XSRF-TOKEN',
+  xsrfTokenHeaderName: 'X-XSRF-TOKEN'
 };
 
 /*

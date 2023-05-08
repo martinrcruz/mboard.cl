@@ -3,16 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LayoutComponent } from './website/layout/layout.component';
-import { HomeComponent } from './website/pages/home/home.component';
-import { DashboardComponent } from './website/pages/dashboard/dashboard.component';
-import { AgendaComponent } from './website/pages/agenda/agenda.component';
-import { NotasComponent } from './website/pages/notas/notas.component';
-import { PresupuestoComponent } from './website/pages/presupuesto/presupuesto.component';
-import { ProyectosComponent } from './website/pages/proyectos/proyectos.component';
-import { CuentasComponent } from './website/pages/cuentas/cuentas.component';
-import { CloudComponent } from './website/pages/cloud/cloud.component';
-import { LoginComponent } from './website/auth/login/login.component';
+import { LayoutComponent } from './layout/layout.component';
+import { HomeComponent } from './pages/home/home.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { CuentasComponent } from './pages/cuentas/cuentas.component';
+import { LoginComponent } from './pages/auth/login/login.component';
 
 
 //MATERIAL MODULES
@@ -27,29 +22,34 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { GastosMensualesComponent } from './website/pages/presupuesto/gastos-mensuales/gastos-mensuales.component';
-import { MovimientosComponent } from './website/pages/presupuesto/movimientos/movimientos.component';
-import { AhorroComponent } from './website/pages/presupuesto/ahorro/ahorro.component';
-import { HttpClientModule } from '@angular/common/http';
-import { GastoModalComponent } from './website/pages/presupuesto/gastos-mensuales/gasto-modal/gasto-modal.component';
+import { HTTP_INTERCEPTORS, HttpClientModule, HttpClientXsrfModule } from '@angular/common/http';
+import { RegisterComponent } from './pages/auth/register/register.component';
+import { ForgotPasswordComponent } from './pages/auth/forgot-password/forgot-password.component';
+import { AccountSettingsComponent } from './pages/auth/account-settings/account-settings.component';
+import { ProfileComponent } from './pages/auth/profile/profile.component';
+import { LogoutComponent } from './pages/auth/logout/logout.component';
+import { NotFoundComponent } from './components/misc/handlers/not-found/not-found.component';
+import { AuthService } from './services/auth.service';
+import { AuthGuard } from './guards/auth.guard';
+import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
+import { AuthInterceptor } from './interceptors/auth/auth.interceptor';
+import { environment } from 'src/environments/environment';
+import { TableComponent } from './components/ui-components/table/table.component';
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
     HomeComponent,
     DashboardComponent,
-    AgendaComponent,
-    NotasComponent,
-    PresupuestoComponent,
-    ProyectosComponent,
     CuentasComponent,
-    CloudComponent,
     LoginComponent,
-    GastosMensualesComponent,
-    MovimientosComponent,
-    AhorroComponent,
-    GastoModalComponent,
-
+    RegisterComponent,
+    ForgotPasswordComponent,
+    AccountSettingsComponent,
+    ProfileComponent,
+    LogoutComponent,
+    NotFoundComponent,
+    TableComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,10 +63,39 @@ import { GastoModalComponent } from './website/pages/presupuesto/gastos-mensuale
     MatDatepickerModule,
     MatNativeDateModule,
     MatSlideToggleModule,
-    HttpClientModule
+    HttpClientModule,
+    HttpClientXsrfModule.withOptions({
+      cookieName: environment.xsrfTokenCookieName,
+      headerName: environment.xsrfTokenHeaderName
+    }),
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => {
+          return localStorage.getItem(environment.jwtTokenStorageKey);
+        }
+      }
+    })
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [{ provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: true } }
+  providers: [
+      AuthService,
+      AuthGuard,
+      JwtHelperService,
+      {
+        provide: HTTP_INTERCEPTORS,
+        useClass: AuthInterceptor,
+        multi: true
+      },
+      { 
+        provide: 'API_BASE_URL', 
+        useValue: environment.authApi 
+      },
+      {
+        provide: MAT_DIALOG_DEFAULT_OPTIONS,
+        useValue: { hasBackdrop: true } 
+      }
+
+  
   ],
   bootstrap: [AppComponent]
 })

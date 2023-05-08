@@ -1,53 +1,57 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LayoutComponent } from './website/layout/layout.component';
-import { AgendaComponent } from './website/pages/agenda/agenda.component';
-import { CloudComponent } from './website/pages/cloud/cloud.component';
-import { CuentasComponent } from './website/pages/cuentas/cuentas.component';
-import { DashboardComponent } from './website/pages/dashboard/dashboard.component';
-import { NotasComponent } from './website/pages/notas/notas.component';
-import { PresupuestoComponent } from './website/pages/presupuesto/presupuesto.component';
-import { ProyectosComponent } from './website/pages/proyectos/proyectos.component';
+import { LayoutComponent } from './layout/layout.component';
+import { LoginComponent } from './pages/auth/login/login.component';
+import { ForgotPasswordComponent } from './pages/auth/forgot-password/forgot-password.component';
+import { RegisterComponent } from './pages/auth/register/register.component';
+import { NotFoundComponent } from './components/misc/handlers/not-found/not-found.component';
+import { AuthGuard } from './guards/auth.guard';
 
 
-const routes: Routes = [{
-    path: '',
-    component: LayoutComponent,
-    data: {
-        title: 'Home'
+const routes: Routes = [
+    {
+        path: '',
+        // canActivate: [AuthGuard], //desactivated for dev purpouse
+        component: LayoutComponent,
+        children: [
+            {
+                path: '',
+                loadChildren: () => import('./pages/menu.module')
+                    .then(m => m.MenuModule),
+            }
+        ]
     },
-    children: [{
-            path: '',
-            redirectTo: 'home',
-            pathMatch: 'full'
-        },
-        {
-            path: 'dashboard',
-            component: DashboardComponent
-        }, {
-            path: 'agenda',
-            component: AgendaComponent
-        }, {
-            path: 'notas',
-            component: NotasComponent
-        }, {
-            path: 'presupuesto',
-            component: PresupuestoComponent
-        }, {
-            path: 'proyectos',
-            component: ProyectosComponent
-        }, {
-            path: 'cuentas',
-            component: CuentasComponent
-        }, {
-            path: 'cloud',
-            component: CloudComponent
-        },
-    ],
-}, ];
+    {
+        path: 'auth',
+        children: [
+            {
+                path: 'login',
+                component: LoginComponent,
+            },
+            {
+                path: 'register',
+                component: RegisterComponent,
+            },
+            {
+                path: 'forgot-password',
+                component: ForgotPasswordComponent,
+            },
+        ]
+    },
+    {
+        path: '',
+        redirectTo: '',
+        pathMatch: 'full',
+      },
+      {
+        path: '**', //not found
+        component: NotFoundComponent,
+      },
+
+];
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

@@ -202,6 +202,28 @@
                   <h2>Imagenes</h2>
                 </div>
                 <hr>
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col">
+                      <ngx-dropzone (change)="onSelect($event)">
+                        <ngx-dropzone-label>Arrastra las imagenes que quieres que aparezcan en tu
+                          publicación.</ngx-dropzone-label>
+                        <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+                          <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                        </ngx-dropzone-preview>
+                      </ngx-dropzone>
+                    </div>
+                  </div>
+                  <div class="row contenedor text-center">
+                    <div>
+                      <div *ngFor="let f of files"
+                        style="display: inline-block !important; padding-left: 0px !important; padding-right: 0px !important;">
+                        <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" [file]="f">
+                        </ngx-dropzone-image-preview>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -307,11 +329,16 @@
                   </div>
                   <hr>
 
-                  <mat-chip-listbox aria-label="Fish selection">
-                    <mat-chip>Unico dueño</mat-chip>
-                    <mat-chip>0km</mat-chip>
-                    <mat-chip color="primary">Bajo Km</mat-chip>
-                    <mat-chip color="accent">Top de linea</mat-chip>
+                  <mat-chip-listbox multiple aria-label="Fish selection">
+                    <mat-chip-option>Unico dueño</mat-chip-option>
+                    <mat-chip-option>0km</mat-chip-option>
+                    <mat-chip-option>Pocos Kilómetros</mat-chip-option>
+                    <mat-chip-option>Top de linea</mat-chip-option>
+                    <mat-chip-option>Diesel</mat-chip-option>
+                    <mat-chip-option>Todo terreno</mat-chip-option>
+                    <mat-chip-option>De lujo</mat-chip-option>
+                    <mat-chip-option>Garantia de fabrica</mat-chip-option>
+
                   </mat-chip-listbox>
 
                 </div>
@@ -323,8 +350,24 @@
     </div>
   </div>
 
+  <hr>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-2 text-center">
+        <button class="close-button">Cancelar</button>
+      </div>
+      <div class="col-6">
 
+      </div>
+      <div class="col-2">
+        <button class="view-button float-end">Previsualizar publicacion</button>
+      </div>
+      <div class="col-2">
+        <button class="add-button float-start">Crear publicacion</button>
+      </div>
+ 
+   
+    </div>
+  </div>
 
 </form>
-
-<hr>

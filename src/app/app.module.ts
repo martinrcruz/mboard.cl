@@ -9,16 +9,8 @@ import { LoginComponent } from './pages/auth/login/login.component';
 
 
 //MATERIAL MODULES
-import { MatLegacyTabsModule as MatTabsModule } from '@angular/material/legacy-tabs';
-import { MatLegacyTableModule as MatTableModule } from '@angular/material/legacy-table';
-import { MatLegacyDialogModule as MatDialogModule, MAT_LEGACY_DIALOG_DEFAULT_OPTIONS as MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/legacy-dialog';
-import { MatLegacyInputModule as MatInputModule } from '@angular/material/legacy-input';
-import { MatLegacySelectModule as MatSelectModule } from '@angular/material/legacy-select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import { MatLegacySlideToggleModule as MatSlideToggleModule } from '@angular/material/legacy-slide-toggle';
-import { MatLegacyFormFieldModule as MatFormFieldModule } from '@angular/material/legacy-form-field';
-import { MatLegacyPaginatorModule as MatPaginatorModule } from '@angular/material/legacy-paginator';
 
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -34,7 +26,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
 import { AuthInterceptor } from './interceptors/auth/auth.interceptor';
 import { environment } from 'src/environments/environment';
-import { TableComponent } from './components/ui-components/table/table.component';
+import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -47,23 +39,14 @@ import { TableComponent } from './components/ui-components/table/table.component
     AccountSettingsComponent,
     ProfileComponent,
     LogoutComponent,
-    NotFoundComponent,
-    TableComponent
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatTabsModule,
-    MatTableModule,
-    MatDialogModule,
-    MatInputModule,
-    MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSlideToggleModule,
-    MatPaginatorModule,
-    MatFormFieldModule,
     HttpClientModule,
     HttpClientXsrfModule.withOptions({
       cookieName: environment.xsrfTokenCookieName,

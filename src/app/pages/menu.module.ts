@@ -5,13 +5,15 @@ import { AddPostComponent } from './post/add-post/add-post.component';
 import { EditPostComponent } from './post/edit-post/edit-post.component';
 import { GetPostComponent } from './post/get-post/get-post.component';
 import { ListPostsComponent } from './post/list-posts/list-posts.component';
-import { MatLegacyTableModule as MatTableModule } from '@angular/material/legacy-table';
-import { MatLegacyPaginatorModule as MatPaginatorModule } from '@angular/material/legacy-paginator';
-import { MatLegacyFormFieldModule as MatFormFieldModule } from '@angular/material/legacy-form-field';
-import { MatLegacyInputModule as MatInputModule } from '@angular/material/legacy-input';
-import { MatLegacyCheckboxModule as MatCheckboxModule } from '@angular/material/legacy-checkbox';
+
 import { ScrollingModule } from '@angular/cdk/scrolling';
-import { MatLegacyChipsModule as MatChipsModule } from '@angular/material/legacy-chips';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatChipsModule} from '@angular/material/chips';
+import { NgxDropzoneModule } from 'ngx-dropzone';
 
 
 
@@ -31,7 +33,8 @@ import { MatLegacyChipsModule as MatChipsModule } from '@angular/material/legacy
     MenuRoutingModule,
     MatCheckboxModule,
     ScrollingModule,
-    MatChipsModule
+    MatChipsModule,
+    NgxDropzoneModule
   ]
 })
 export class MenuModule { }

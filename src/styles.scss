@@ -15,8 +15,7 @@ body {
   --dark-blue: #1d2d44;
   --basic-blue: #f7f7f7;
   --soft-blue: #f0f0f0;
-  --mint: #55b182;
-  --hover-mint: rgb(92, 204, 146);
+
   --bronze: #e4a126;
 
   --dark-base: #353535;
@@ -28,16 +27,21 @@ body {
   --white: ;
   --light-gray: ;
 
-  --green: #55b182;
-  --yellow: #f3b135;
+  --mint: #55b182;
+  --hover-mint: rgb(92, 204, 146);
+  --yellow: #e4a126;
+  --hover-yellow: #ecb244;
   --red: rgb(168, 39, 39);
+  --hover-red: rgb(190, 55, 55);
+  --blue: #44628f;
+  --hover-blue: #5375a8;
 
-  --dark-gray: #353535;
+  --dark-gray: #38405f;
   --dark-gray-hover: #414141;
   --sidebar-background: #efefef;
   --sidebar-section-title: #353535;
   --sidebar-btn: #e6e6e679;
-  --sidebar-btn-hover: #757e8b;
+  --sidebar-btn-hover: #38405f;
   --sidebar-btn-color: #fdfdfd;
 }
 
@@ -57,10 +61,11 @@ body {
 
 //GLOBAL UTILITIES - BREADCRUMB
 .breadcrumb {
-  background-color: rgba(245, 245, 245, 0.623) !important;
-  padding: 20px 20px 0px 20px !important;
-  margin-bottom: 2% !important;
-  border-radius: 10px !important;
+  background-color: white !important;
+  padding: 20px 20px 20px 30px !important;
+  margin-bottom: 1% !important;
+  border-radius: 5px !important;
+  border: 1px solid rgb(228, 228, 228);
   h4 {
     margin-top: 5px;
     padding-right: 5px;
@@ -78,7 +83,7 @@ body {
 
 //GLOBAL UTILITIES - BUTTONS
 .add-button {
-  background-color: var(--mint);
+  background-color: var(--mint) !important;
   color: white;
   padding: 9px 25px 9px 25px;
   border: none;
@@ -88,14 +93,31 @@ body {
 }
 
 .add-button:hover {
-  background-color: var(--hover-mint);
+  background-color: var(--hover-mint) !important;
+  color: white;
+  border-radius: 6px;
+  transition: 0.5s;
+}
+
+.view-button {
+  background-color: var(--blue) !important;
+  color: white;
+  padding: 9px 25px 9px 25px;
+  border: none;
+  border-radius: 6px;
+  margin-bottom: 22px;
+  font-size: 16px;
+}
+
+.view-button:hover {
+  background-color: var(--hover-blue) !important;
   color: white;
   border-radius: 6px;
   transition: 0.5s;
 }
 
 .edit-button {
-  background-color: var(--bronze);
+  background-color: var(--yellow) !important;
   color: white;
   padding: 9px 25px 9px 25px;
   border: none;
@@ -105,14 +127,14 @@ body {
 }
 
 .edit-button:hover {
-  background-color: #f3b135;
+  background-color: var(--hover-yellow) !important;
   color: white;
   border-radius: 6px;
   transition: 0.5s;
 }
 
 .close-button {
-  background-color: rgb(168, 39, 39);
+  background-color: var(--red) !important;
   color: white;
   padding: 9px 25px 9px 25px;
   border: none;
@@ -121,7 +143,7 @@ body {
   font-size: 16px;
 }
 .close-button:hover {
-  background-color: rgb(199, 44, 44);
+  background-color: var(--hover-red) !important;
   color: white;
   border-radius: 6px;
   transition: 0.5s;
@@ -151,6 +173,14 @@ body {
   }
 }
 
+.table-box {
+  background-color: white !important;
+  padding: 30px 20px 20px 20px !important;
+  margin-bottom: 2% !important;
+  border-radius: 5px !important;
+  border: 1px solid rgb(228, 228, 228);
+}
+
 //GLOBAL UTILITIES - DIALOGS/MODALS
 .header-row {
   background-color: var(--dark-gray);
@@ -167,4 +197,52 @@ body {
   margin-top: -3px;
   border-radius: 20px;
   border: none;
+}
+
+//FORM SETTINGS
+.form-block {
+  background-color: rgba(245, 245, 245, 0.623);
+  padding: 20px 20px 0px 20px !important;
+  margin-bottom: 2% !important;
+  border-radius: 10px !important;
+
+  .mat-form-field-outline {
+    background-color: white;
+  }
+}
+
+.viewport {
+  height: 50vh;
+  width: 22vh;
+}
+
+.form-icon-title {
+  padding: 8px 20px 5px 20px;
+  i {
+    display: inline;
+  }
+  h2 {
+    padding: 10px;
+    display: inline;
+  }
+}
+
+.checkbox-icon-title {
+  // padding: 8px 20px 5px 20px;
+  i {
+    display: inline;
+  }
+  h2 {
+    padding: 10px;
+    display: inline;
+  }
+}
+
+::-webkit-scrollbar {
+  background-color: rgba(255, 255, 255, 0.534) !important;
+  width: 0.5em;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(136, 136, 136, 0.301);
+  outline: none;
 }

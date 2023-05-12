@@ -1,0 +1,32 @@
+.mat-column-id {
+  width: 60px !important;
+}
+.mat-column-name {
+  width: 30%;
+  padding-left: 1%;
+}
+.mat-column-description {
+  width: 55%;
+  padding-left: 1%;
+}
+.mat-column-edit {
+  width: 80px !important;
+}
+.mat-column-eliminar {
+  width: 80px !important;
+}
+
+.custom-search-bar-input {
+  border: 1px solid var(--dark-base);
+  border-radius: 20px 0px 0px 20px;
+  border-right: none;
+  padding: 7px 20px 7px 20px;
+  width: 90%;
+}
+
+.custom-search-bar-icon {
+  border: 1px solid var(--dark-base);
+  border-left: none;
+  border-radius: 0px 20px 20px 0px;
+  padding: 17px 10px 16px 6px;
+}

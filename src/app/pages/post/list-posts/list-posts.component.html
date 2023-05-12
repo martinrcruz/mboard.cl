@@ -1,0 +1,157 @@
+<div class="container-fluid breadcrumb">
+    <div class="row">
+        <div class="col">
+            <div>
+                <h1> Lista de Publicaciones </h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid table-box">
+    <div class="row">
+        <div class="col-1" style="width: 3%;">
+            <button class="btn btn-warning"><i class="fas fa-filter white-icon"></i></button>
+        </div>
+        <div class="col-4 text-center" style="width: 38%;">
+            <input class="custom-search-bar-input" placeholder="Buscar una publicacion" (keyup)="applyFilter($event)"
+                #input>
+            <i class="fas fa-search fa-xl custom-search-bar-icon"></i>
+        </div>
+        <div class="col-1"></div>
+        <div class="col-2 offset-4">
+            <button class="add-button full-width float-end" (click)="goToAddPost()">Crear publicación</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="mat-elevation-z0">
+                <table mat-table [dataSource]="dataSource" class="custom-mat-table" matSort>
+
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="id" class="table-head">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
+                        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="title" class="table-head">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Titulo </th>
+                        <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="buyPrice" class="table-head">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> $ Compra </th>
+                        <td mat-cell *matCellDef="let element"> {{element.buyPrice}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="sellPrice" class="table-head">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> $ Venta </th>
+                        <td mat-cell *matCellDef="let element"> {{element.sellPrice}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="discountPrice" class="table-head">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> $ Dscto. </th>
+                        <td mat-cell *matCellDef="let element"> {{element.discountPrice}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="brand" class="table-head">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Marca </th>
+                        <td mat-cell *matCellDef="let element"> {{element.brand}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="model" class="table-head">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Modelo </th>
+                        <td mat-cell *matCellDef="let element"> {{element.model}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="version" class="table-head">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Version </th>
+                        <td mat-cell *matCellDef="let element"> {{element.version}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="kilometers" class="table-head">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Kms. </th>
+                        <td mat-cell *matCellDef="let element"> {{element.kilometers}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="bodyType" class="table-head">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Carroceria </th>
+                        <td mat-cell *matCellDef="let element"> {{element.bodyType}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="fuelType" class="table-head">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Combustible </th>
+                        <td mat-cell *matCellDef="let element"> {{element.fuelType}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="transmission" class="table-head">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Transmision </th>
+                        <td mat-cell *matCellDef="let element"> {{element.transmission}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="traction" class="table-head">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Traccion </th>
+                        <td mat-cell *matCellDef="let element"> {{element.traction}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="color" class="table-head">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Color </th>
+                        <td mat-cell *matCellDef="let element"> {{element.color}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="doors" class="table-head">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Puertas </th>
+                        <td mat-cell *matCellDef="let element"> {{element.doors}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="status" class="table-head">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Estado </th>
+                        <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="createdBy" class="table-head">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Creado por </th>
+                        <td mat-cell *matCellDef="let element"> {{element.createdBy}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="createdAt" class="table-head">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha creacion </th>
+                        <td mat-cell *matCellDef="let element"> {{element.createdAt}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="revisar" class="table-head">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Revisar </th>
+                        <td mat-cell *matCellDef="let element" class="text-center" (click)="goToGetPost()"> <button
+                                class="btn view-button mt-3"><i class="fas fa-eye white-icon"></i></button>
+                        </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="editar" class="table-head">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Editar </th>
+                        <td mat-cell *matCellDef="let element" class="text-center" (click)="goToEditPost()"> <button
+                                class="btn edit-button mt-3"><i class="fas fa-edit white-icon"></i></button>
+                        </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="eliminar" class="table-head">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Eliminar </th>
+                        <td mat-cell *matCellDef="let element" class="text-center"> <button class="btn close-button mt-3"><i
+                                    class="fas fa-trash white-icon"></i></button></td>
+                    </ng-container>
+
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                    <!-- Row shown when there is no matching data. -->
+                    <tr class="mat-row" *matNoDataRow>
+                        <td class="mat-cell" colspan="4">No hay resultados para la busqueda.</td>
+                    </tr>
+                </table>
+
+                <mat-paginator [pageSizeOptions]="[10, 25, 50, 100]" aria-label="Select page of users"></mat-paginator>
+            </div>
+        </div>
+    </div>
+</div>

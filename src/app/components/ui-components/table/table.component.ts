@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { TableButton, TableExtraOptions, TableFilters, TableHeader } from './table-options';
 import { MatDialog } from '@angular/material/dialog';
-import { AddProductComponent } from 'src/app/pages/inventory/product/add-product/add-product.component';
 
 @Component({
   selector: 'app-table',
